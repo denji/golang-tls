@@ -240,6 +240,7 @@ CA Bundle Path
 
 Reference Link
 ---
+* [Go programming language secure coding practices guide](https://github.com/Checkmarx/Go-SCP)
 * ~~[Achieving a Perfect SSL Labs Score with Go – `blog.bracelab.com`](https://web.archive.org/web/20160520182043/https://blog.bracelab.com/achieving-perfect-ssl-labs-score-with-go)~~
 * [OpenSSL without prompt – `superuser.com` (Stack Exchange)](http://superuser.com/a/226229/205366)
 * [TLS server and client — `gist.github.com/spikebike`](https://gist.github.com/spikebike/2232102)
