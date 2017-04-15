@@ -229,14 +229,17 @@ ECDSA & RSA — FAQ
 
 CA Bundle Path
 ---
-* `/etc/pki/tls/certs/ca-bundle.crt` — `Fedora`, `RHEL`, `CentOS` (`ca-certificates` package)
-* `/etc/ssl/certs/ca-certificates.crt` — `Debian`, `Ubuntu`, `Gentoo`, `Arch Linux` (`ca-certificates` package)
-* `/etc/ssl/ca-bundle.pem` — `SUSE`, `openSUSE` (`ca-certificates` package)
-* `/usr/local/share/certs/ca-root-nss.crt` — `FreeBSD` (`ca_root_nss` package)
-* `/usr/ssl/certs/ca-bundle.crt` — `Cygwin`
-* `/opt/local/share/curl/curl-ca-bundle.crt` — `macOS macports` (`curl-ca-bundle` package)
-* `/usr/local/share/curl/curl-ca-bundle.crt` — Default cURL CA bunde path (without `--with-ca-bundle` option)
-* `/usr/share/ssl/certs/ca-bundle.crt` — `Really old RedHat?`
+
+| Distro                                                       	| Package         	| Path to CA                               	|
+|--------------------------------------------------------------	|-----------------	|------------------------------------------	|
+| Fedora, RHEL, CentOS                                         	| ca-certificates 	| /etc/pki/tls/certs/ca-bundle.crt         	|
+| Debian, Ubuntu, Gentoo, Arch Linux                           	| ca-certificates 	| /etc/ssl/certs/ca-certificates.crt       	|
+| SUSE, openSUSE                                               	| ca-certificates 	| /etc/ssl/ca-bundle.pem                   	|
+| FreeBSD                                                      	| ca_root_nss     	| /usr/local/share/certs/ca-root-nss.crt   	|
+| Cygwin                                                       	| -               	| /usr/ssl/certs/ca-bundle.crt             	|
+| macOS (MacPorts)                                             	| curl-ca-bundle  	| /opt/local/share/curl/curl-ca-bundle.crt 	|
+| Default cURL CA bunde path (without --with-ca-bundle option) 	|                 	| /usr/local/share/curl/curl-ca-bundle.crt 	|
+| Really old RedHat?                                           	|                 	| /usr/share/ssl/certs/ca-bundle.crt       	|
 
 Reference Link
 ---
