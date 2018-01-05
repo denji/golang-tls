@@ -246,6 +246,7 @@ Reference Link
 * [Go programming language secure coding practices guide](https://github.com/Checkmarx/Go-SCP)
 * ~~[Achieving a Perfect SSL Labs Score with Go – `blog.bracelab.com`](https://web.archive.org/web/20160520182043/https://blog.bracelab.com/achieving-perfect-ssl-labs-score-with-go)~~
 * [Automatic HTTPS With Free SSL Certificates Using Go + Let's Encrypt](https://www.captaincodeman.com/2017/05/07/automatic-https-with-free-ssl-certificates-using-go-lets-encrypt)
+* https://golang.org/pkg/crypto/tls/
 * [OpenSSL without prompt – `superuser.com` (Stack Exchange)](http://superuser.com/a/226229/205366)
 * [TLS server and client — `gist.github.com/spikebike`](https://gist.github.com/spikebike/2232102)
 * ~~[Echo, a fast and unfancy micro web framework for Go — `echo.labstack.com/guide`](https://web.archive.org/web/20150925030955/http://echo.labstack.com/guide)~~
