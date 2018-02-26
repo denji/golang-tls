@@ -45,7 +45,7 @@ func main() {
 }
 ```
 
-Hint: visit, please do not forget to use https begins,otherwise chrome will download a file as follows:
+Hint: visit, please do not forget to use https begins, otherwise chrome will download a file as follows:
 
 ```bash
 $ curl -sL https://localhost:443 | xxd
