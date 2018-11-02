@@ -294,4 +294,5 @@ Reference Link
 * https://github.com/Evolix/chexpire
 * https://github.com/mimoo/cryptobible/blob/master/protocols/tls.mediawiki
 * https://posener.github.io/http2/
+* https://seclists.org/oss-sec/2018/q4/123
 * …
