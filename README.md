@@ -243,6 +243,7 @@ CA Bundle Path
 
 Reference Link
 ---
+* https://getgophish.com/blog/post/2018-12-02-building-web-servers-in-go/
 * [Go programming language secure coding practices guide](https://github.com/Checkmarx/Go-SCP)
 * ~~[Achieving a Perfect SSL Labs Score with Go – `blog.bracelab.com`](https://web.archive.org/web/20160520182043/https://blog.bracelab.com/achieving-perfect-ssl-labs-score-with-go)~~
 * [Automatic HTTPS With Free SSL Certificates Using Go + Let's Encrypt](https://www.captaincodeman.com/2017/05/07/automatic-https-with-free-ssl-certificates-using-go-lets-encrypt)
