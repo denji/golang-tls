@@ -1,8 +1,8 @@
 ##### Generate private key (.key)
 
 ```sh
-# Key considerations for algorithm "RSA" ≥ 3072-bit
-openssl genrsa -out server.key 3072
+# Key considerations for algorithm "RSA" ≥ 2048-bit
+openssl genrsa -out server.key 2048
 
 # Key considerations for algorithm "ECDSA" (X25519 || ≥ secp384r1)
 # https://safecurves.cr.yp.to/
@@ -203,8 +203,8 @@ openssl req -x509 -nodes -newkey ec:secp384r1 -keyout server.ecdsa.key -out serv
 ln -sf server.ecdsa.key server.key
 ln -sf server.ecdsa.crt server.crt
 
-# RSA recommendation key ≥ 3072-bit
-openssl req -x509 -nodes -newkey rsa:3072 -keyout server.rsa.key -out server.rsa.crt -days 3650
+# RSA recommendation key ≥ 2048-bit
+openssl req -x509 -nodes -newkey rsa:2048 -keyout server.rsa.key -out server.rsa.crt -days 3650
 ln -sf server.rsa.key server.key
 ln -sf server.rsa.crt server.crt
 ```
