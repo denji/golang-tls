@@ -244,6 +244,8 @@ CA Bundle Path
 
 Reference Link
 ---
+* https://github.com/smallstep/certificates
+* https://github.com/FiloSottile/mkcert
 * https://getgophish.com/blog/post/2018-12-02-building-web-servers-in-go/
 * [Go programming language secure coding practices guide](https://github.com/Checkmarx/Go-SCP)
 * ~~[Achieving a Perfect SSL Labs Score with Go – `blog.bracelab.com`](https://web.archive.org/web/20160520182043/https://blog.bracelab.com/achieving-perfect-ssl-labs-score-with-go)~~
@@ -292,7 +294,6 @@ Reference Link
 * https://github.com/zmap/zlint
 * https://github.com/globalsign/certlint
 * https://github.com/google/certificate-transparency-go
-* https://github.com/FiloSottile/mkcert
 * https://github.com/Evolix/chexpire
 * https://github.com/mimoo/cryptobible/blob/master/protocols/tls.mediawiki
 * https://posener.github.io/http2/
