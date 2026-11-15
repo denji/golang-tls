@@ -438,6 +438,50 @@ Chrome, a container, or a Go process trusts the same root.
 When diagnosing a trust problem, identify the exact client and trust store.
 Avoid hard-coding operating-system CA bundle paths into portable Go programs.
 
+### CA bundle paths
+
+The following paths are useful when configuring command-line tools, OpenSSL,
+container images, or software that explicitly requires a CA bundle file. They
+are **reference locations, not a portable API**. Symlinks, package choices, OS
+releases, and local policy can change the effective path.
+
+| Operating system / distribution | Common CA bundle or trust location | Notes |
+| --- | --- | --- |
+| Debian, Ubuntu | `/etc/ssl/certs/ca-certificates.crt` | Combined PEM bundle; `/etc/ssl/certs/` also contains the certificate directory. |
+| RHEL, Fedora, CentOS | `/etc/pki/tls/certs/ca-bundle.crt` | Common compatibility path. The extracted bundle is also commonly available at `/etc/pki/ca-trust/extracted/pem/tls-ca-bundle.pem`. |
+| SUSE, openSUSE | `/etc/ssl/ca-bundle.pem` | Common bundle path; current trust anchors are managed under `/etc/pki/trust/anchors/` and `/usr/share/pki/trust/anchors/`. Confirm the generated bundle path on the target release. |
+| FreeBSD | `/usr/local/share/certs/ca-root-nss.crt` | Provided by the `ca_root_nss` package; applications may instead use the system/OpenSSL trust configuration. |
+| Cygwin | `/usr/ssl/certs/ca-bundle.crt` | Cygwin-specific location; verify that the CA bundle package is installed. |
+| macOS | No single universal PEM bundle | The native system trust is managed through Keychain/Security.framework. Homebrew or MacPorts OpenSSL installations may use their own bundle. |
+| Windows | No conventional system-wide PEM bundle path | Native applications generally use the Windows certificate stores; third-party OpenSSL builds may ship or configure a separate PEM bundle. |
+
+**Installing a private root CA** uses a different location from the generated
+bundle itself. For example:
+
+| Distribution family | Local CA anchor directory | Refresh command |
+| --- | --- | --- |
+| Debian, Ubuntu | `/usr/local/share/ca-certificates/` (PEM files with `.crt` suffix) | `sudo update-ca-certificates` |
+| RHEL, Fedora, CentOS | `/etc/pki/ca-trust/source/anchors/` | `sudo update-ca-trust extract` |
+| SUSE, openSUSE | `/etc/pki/trust/anchors/` | `sudo update-ca-certificates` |
+
+```sh
+# Debian / Ubuntu example: install a PEM-encoded root CA, then rebuild the bundle.
+sudo install -m 0644 my-private-root-ca.crt /usr/local/share/ca-certificates/
+sudo update-ca-certificates
+
+# RHEL-family example: install the trust anchor, then refresh the extracted store.
+sudo install -m 0644 my-private-root-ca.crt /etc/pki/ca-trust/source/anchors/
+sudo update-ca-trust extract
+```
+
+⚠️ Do not append a private CA directly to a generated bundle: package updates may
+replace it, and the change will be difficult to audit. Install trust anchors
+through the distribution's supported mechanism instead. In containers, inspect
+the trust store **inside the image**; the host's bundle is not automatically
+visible to the container.
+
+For current platform instructions, see the [Ubuntu trust-store guide](https://ubuntu.com/server/docs/how-to/security/install-a-root-ca-certificate-in-the-trust-store/), [Red Hat shared system trust-store documentation](https://docs.redhat.com/en/documentation/red_hat_enterprise_linux/10/html/securing_networks/using-shared-system-certificates), and [SUSE trust-store documentation](https://documentation.suse.com/smart/security/html/tls-certificates/index.html).
+
 ---
 
 ## HTTPS server
