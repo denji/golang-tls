@@ -1450,6 +1450,7 @@ requirements:
 - [Go FIPS 140-3 documentation](https://go.dev/doc/security/fips140)
 
 ---
+- [CleanSlate](https://github.com/devshield-tech/botox-android) - Remotely wipe your Android device if it is lost or stolen.
 
 ## Testing and verification
 
